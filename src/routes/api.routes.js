@@ -14,5 +14,6 @@ router.post('/upload', upload.single('file'), UploadController.store)
 
 router.get("/fakultas",FakultasController.index)
 router.get("/fakultas/:id",FakultasController.show)
+router.post("/fakultas",FakultasController.store)
 
 export default router

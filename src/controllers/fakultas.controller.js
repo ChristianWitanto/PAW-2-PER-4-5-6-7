@@ -1,27 +1,41 @@
+import FakultasModel from "../model/Fakultas.model.js";
 import { apiResponse } from "../utils/response.js";
 
 class FakultasController {
     static async index(req,res) {
+        const listFakultas = await FakultasModel.find()
+
         return apiResponse({
             res,
             status : 200,
             message : "List Fakultas",
-            data : [{
-                name : "Sistem Informasi"
-            }]
+            data : listFakultas
         })
     }
     static async show(req,res) {
         const fakultasId = req.params.id;
+
+        const fakultas = await FakultasModel.findById(fakultasId)
         return apiResponse({
             res,
             status : 200,
             message : "Detail Fakultas",
-            data : [{
-                "name" : "Sistem Informasi"
-            }]
+            data : fakultas
+        })
+    }
+    static async store(req,res){
+        const{name} = req.body;
+
+        const fakultas = await FakultasModel.create({
+            name : name
+        })
+        return apiResponse({
+            res,
+            status : 200,
+            message : "Fakultas berhasil di buat",
+            data : fakultas 
         })
     }
 }
 
-export default FakultasController;
+export default FakultasController
