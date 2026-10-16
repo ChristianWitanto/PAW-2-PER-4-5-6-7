@@ -1,5 +1,6 @@
 import express from 'express'
 import FakultasController from '../controllers/fakultas.controller.js'
+import ProdiController from '../controllers/prodi.controller.js'
 
 import upload from '../config/upload.js'
 import UploadController from '../controllers/upload.controller.js'
@@ -21,5 +22,13 @@ router.post("/fakultas",FakultasController.store)
 router.put("/fakultas/:id",FakultasController.update)
 router.patch("/fakultas/:id",FakultasController.update) 
 router.delete("/fakultas/:id",FakultasController.delete)
+
+
+router.get('/prodi', ProdiController.index)
+router.get('/prodi/:id', ProdiController.show)
+router.put('/prodi/:id', ProdiController.update)
+router.patch('/prodi/:id', ProdiController.update)
+router.delete('/prodi/:id', ProdiController.delete)
+router.post('/prodi', ProdiController.store)
 
 export default router
