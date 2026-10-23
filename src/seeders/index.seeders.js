@@ -1,6 +1,6 @@
-import mongoose, { connectDB } from '../config/paw.js'
-import FakultasModel from '../model/fakultas.model.js'
-import ProdiModel from '../model/prodi.model.js'
+import mongoose, { connectDB } from '../config/database.js';
+import FakultasModel from '../model/Fakultas.model.js';
+import ProdiModel from '../model/Prodi.model.js';
 
 const samples = [
   {

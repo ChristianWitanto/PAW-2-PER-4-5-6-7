@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import FakultasModel from "./Fakultas.model.js";
+
 
 const schema = new mongoose.Schema(
   {
@@ -24,5 +24,5 @@ const schema = new mongoose.Schema(
   },
 );
 
-const ProdiModel = mongoose.model("Prodi", schema);
+const ProdiModel = mongoose.model("prodi", schema);
 export default ProdiModel;

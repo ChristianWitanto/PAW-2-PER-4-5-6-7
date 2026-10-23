@@ -10,5 +10,5 @@ const FakultasSchema = new moongoose.Schema({
     timestamps : true
 })
 
-const FakultasModel = moongoose.model('Fakultas',FakultasSchema)
+const FakultasModel = moongoose.model('fakultas',FakultasSchema)
 export default FakultasModel
