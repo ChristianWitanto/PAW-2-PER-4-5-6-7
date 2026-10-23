@@ -3,7 +3,20 @@ import { apiResponse } from "../utils/response.js";
 import { storeFakultasSchema } from "../schemas/fakultas.schema.js";
 class FakultasController {
     static async index(req,res) {
-        const listFakultas = await FakultasModel.find()
+        const { search,sort } = req.query;
+
+        const filter = {}
+        const sortOptions = {
+            createdAt: sort === "desc" ? 1 : -1
+        };
+        if (search) {
+            filter.name = {
+              $regex: search,
+              $options: "i"
+            }
+        }
+
+        const listFakultas = await FakultasModel.find(filter).sort(sortOptions)
 
         return apiResponse({
             res,

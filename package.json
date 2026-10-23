@@ -15,7 +15,8 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint:fix": "oxlint --fix",
+    "seed": "node src/seeders/index.seeder.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -30,6 +31,7 @@
     "mongoose": "^9.9.4",
     "multer": "^2.3.0",
     "zod": "^4.5.4"
+
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.10",

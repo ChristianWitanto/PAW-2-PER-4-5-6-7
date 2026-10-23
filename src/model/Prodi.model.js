@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import "./Fakultas.model.js";
+import FakultasModel from "./Fakultas.model.js";
 
 const schema = new mongoose.Schema(
   {
@@ -15,7 +15,7 @@ const schema = new mongoose.Schema(
     },
     fakultas: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "fakultas", // Mereferensikan model 'fakultas'
+      ref: "fakultas", 
       required: true,
     },
   },
